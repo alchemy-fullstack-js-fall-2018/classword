@@ -5,9 +5,7 @@ describe('ensure auth middleware', () => {
     it('checks a bearer token', done => {
         const token = tokenize({ name: 'me' });
         const req = {
-            get: () => {
-                return `Bearer ${token}`;
-            }
+            token
         };
 
         const next = () => {
@@ -21,9 +19,7 @@ describe('ensure auth middleware', () => {
 
     it('checks a bearer token and fails when its bad', done => {
         const req = {
-            get: () => {
-                return 'Bearer auehotutohen';
-            }
+            token: 'anhteountheo'
         };
 
         const next = (err) => {

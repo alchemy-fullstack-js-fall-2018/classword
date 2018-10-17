@@ -41,6 +41,13 @@ describe('user routes', () => {
             });
     });
 
+    let token;
+    beforeEach(() => {
+        return withToken(users[0]).then(createdToken => {
+            token = createdToken;
+        });
+    });
+
     it('hashes a users password', () => {
         return User.create({
             name: 'ryan',
@@ -94,6 +101,7 @@ describe('user routes', () => {
     it('rejects signing in a user with bad email', () => {
         return request(app)
             .post('/api/auth/signin')
+            .set('Authorization', `Bearer ${token}`)
             .send({ email: `${createdUsers[0].email}`, clearPassword: `${users[0].clearPassword}1234` })
             .then(checkStatus(401));
     });
