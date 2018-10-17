@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const User = require('../models/User');
 const { HttpError } = require('../util/errors');
+const ensureAuth = require('../util/ensure-auth');
 
 module.exports = router
     .post('/signup', (req, res, next) => {
@@ -32,9 +33,6 @@ module.exports = router
         });
     })
 
-    .get('/verify', (req, res, next) => {
-        const token = req.get('Authorization').replace('Bearer ', '');
-        User.findByToken(token).then(user => {
-            res.json({ success: !!user });
-        });
+    .get('/verify', ensureAuth, (req, res, next) => {
+        res.json({ success: !!req.user });
     });

@@ -41,8 +41,12 @@ userSchema.methods.authToken = function() {
 };
 
 userSchema.statics.findByToken = function(token) {
-    const user = untokenize(token);
-    return Promise.resolve(user);
+    try {
+        const user = untokenize(token);
+        return Promise.resolve(user);
+    } catch(e) {
+        return Promise.resolve(null);
+    }
 };
 
 const User = mongoose.model('User', userSchema);

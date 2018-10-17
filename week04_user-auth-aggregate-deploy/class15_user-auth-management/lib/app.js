@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const { handler } = require('./util/errors');
+const ensureAuth = require('./util/ensure-auth');
+
 
 app.use(morgan('dev', {
     skip() {
@@ -15,6 +17,8 @@ app.use(express.json());
 
 const auth = require('./routes/auth');
 app.use('/api/auth', auth);
+
+app.use(ensureAuth);
 
 app.use((req, res) => {
     console.log('This is 404');
