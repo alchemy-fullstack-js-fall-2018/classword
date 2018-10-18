@@ -10,6 +10,9 @@
     "start:watch": "nodemon index.js",
     "seed": "node sandbox/sandbox.js"
   },
+  "engines": {
+    "node": "10.12.0"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
