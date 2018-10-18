@@ -7,7 +7,8 @@
     "jest": "jest --verbose",
     "test": "npm run jest",
     "test:watch": "npm run jest -- --watch",
-    "start:watch": "nodemon index.js"
+    "start:watch": "nodemon index.js",
+    "seed": "node sandbox/sandbox.js"
   },
   "keywords": [],
   "author": "",
