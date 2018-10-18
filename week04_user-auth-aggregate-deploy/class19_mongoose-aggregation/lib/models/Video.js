@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { avgReviewsPipeline } = require('./video-aggregates');
 
 const videoSchema = new mongoose.Schema({
     url: {
@@ -13,6 +14,10 @@ const videoSchema = new mongoose.Schema({
         }
     }
 });
+
+videoSchema.methods.averageRating = function() {
+    this.aggregate(avgReviewsPipeline);
+};
 
 const Video = mongoose.model('Video', videoSchema);
 
