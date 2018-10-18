@@ -8,6 +8,7 @@
     "test": "npm run jest",
     "test:watch": "npm run jest -- --watch",
     "start:watch": "nodemon index.js",
+    "start": "node index.js",
     "seed": "node sandbox/sandbox.js"
   },
   "engines": {
