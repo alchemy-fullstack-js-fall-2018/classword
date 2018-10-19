@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { avgReviewsPipeline } = require('./video-aggregates');
+const { avgReviewsPipeline, avgReviewsWithMatchPipeline } = require('./video-aggregates');
 
 const videoSchema = new mongoose.Schema({
     url: {
@@ -17,6 +17,10 @@ const videoSchema = new mongoose.Schema({
 
 videoSchema.statics.averageRating = function(id) {
     return this.aggregate(avgReviewsPipeline(id));
+};
+
+videoSchema.statics.averageRatingsMatch = function(qualifier, value) {
+    return this.aggregate(avgReviewsWithMatchPipeline(qualifier, value));
 };
 
 const Video = mongoose.model('Video', videoSchema);

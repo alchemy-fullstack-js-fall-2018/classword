@@ -15,6 +15,8 @@ const lookupReviews = {
 
 const avgReviews = {
     $project: {
+        url: '$url',
+        tags: '$tags',
         avgRating: { $avg: '$reviews.rating' }
     }
 };
@@ -27,6 +29,17 @@ const avgReviewsPipeline = id => {
     ];
 };
 
+const avgReviewsWithMatchPipeline = (qualifier, value) => {
+    // { $match: { avgRating: { $gte: 2 } } }
+    const match = { '$match': { avgRating: { [`${'$'}${qualifier}`]: parseInt(value) } } };
+    return [
+        lookupReviews,
+        avgReviews,
+        match
+    ];
+};
+
 module.exports = {
-    avgReviewsPipeline
+    avgReviewsPipeline,
+    avgReviewsWithMatchPipeline
 };

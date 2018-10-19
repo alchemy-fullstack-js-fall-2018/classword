@@ -14,6 +14,15 @@ module.exports = router
             .catch(next);
     })
 
+    .get('/rating', (req, res, next) => {
+        const { qualifier, value } = req.query;
+
+        Video
+            .averageRatingsMatch(qualifier, value)
+            .then(videos => res.json(videos))
+            .catch(next);
+    })
+
     .get('/', (req, res, next) => {
         Video
             .find()
@@ -29,10 +38,14 @@ module.exports = router
             .findById(id)
             .select({ __v: false })
             .lean()
-            .then(video => res.json(video));
+            .then(video => res.json(video))
+            .catch(next);
     })
 
     .get('/:id/rating', (req, res, next) => {
         const { id } = req.params;
-        Video.averageRating(id).then(rating => res.json({ rating }));
+        Video
+            .averageRating(id)
+            .then(rating => res.json({ rating }))
+            .catch(next);
     });
