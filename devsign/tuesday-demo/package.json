@@ -4,7 +4,7 @@
   "description": "",
   "main": "postcss.config.js",
   "scripts": {
-    "build:css": "postcss css/*.css -d build/css"
+    "build:css": "postcss css/*.css -d build/css --watch"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,7 @@
   "devDependencies": {
     "autoprefixer": "^9.3.1",
     "postcss-cli": "^6.0.1",
-    "postcss-nested": "^4.1.0"
+    "postcss-nested": "^4.1.0",
+    "postcss-simple-vars": "^5.0.1"
   }
 }

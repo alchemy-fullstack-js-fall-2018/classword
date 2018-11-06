@@ -1,25 +1,52 @@
-.outer {
+/* .outer {
   background-color: #FFF;
 
-}
-
-  .outer .inner {
+  .inner {
     color: #000;
   }
 
-  .outer *::-webkit-input-placeholder {
+  *::placeholder {
     color: red;
   }
 
-  .outer *:-ms-input-placeholder {
-    color: red;
-  }
+} */
 
-  .outer *::-ms-input-placeholder {
-    color: red;
-  }
+body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "header header"
+                      "content sidebar"
+                      "footer footer";
+}
 
-  .outer *::placeholder {
-    color: red;
+header {
+  grid-area: header;
+  background: url('../../hero.jpg');
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+}
+main {
+  grid-area: content;
+}
+/* position: relative; */
+main img {
+    height: 300px;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    /* opacity: 0.2; */
+    /* position: absolute; */
+    -webkit-filter: hue-rotate(180deg) brightness(250%) blur(2px);
+            filter: hue-rotate(180deg) brightness(250%) blur(2px);
   }
-
+main img:hover {
+      -webkit-filter: grayscale(0);
+              filter: grayscale(0);
+    }
+aside {
+  grid-area: sidebar;
+}
+footer {
+  grid-area: footer;
+}

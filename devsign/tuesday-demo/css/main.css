@@ -1,4 +1,4 @@
-.outer {
+/* .outer {
   background-color: #FFF;
 
   .inner {
@@ -9,5 +9,41 @@
     color: red;
   }
 
+} */
+
+body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "header header"
+                      "content sidebar"
+                      "footer footer";
 }
 
+header {
+  grid-area: header;
+  background: url('../../hero.jpg');
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+}
+main {
+  grid-area: content;
+  /* position: relative; */
+  img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    /* opacity: 0.2; */
+    /* position: absolute; */
+    filter: hue-rotate(180deg) brightness(250%) blur(2px);
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+aside {
+  grid-area: sidebar;
+}
+footer {
+  grid-area: footer;
+}
