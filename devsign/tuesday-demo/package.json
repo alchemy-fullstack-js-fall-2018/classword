@@ -1,0 +1,17 @@
+{
+  "name": "tuesday-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "scripts": {
+    "build:css": "postcss css/*.css -d build/css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "postcss-cli": "^6.0.1",
+    "postcss-nested": "^4.1.0"
+  }
+}

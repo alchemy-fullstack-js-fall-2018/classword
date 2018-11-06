@@ -1,0 +1,25 @@
+.outer {
+  background-color: #FFF;
+
+}
+
+  .outer .inner {
+    color: #000;
+  }
+
+  .outer *::-webkit-input-placeholder {
+    color: red;
+  }
+
+  .outer *:-ms-input-placeholder {
+    color: red;
+  }
+
+  .outer *::-ms-input-placeholder {
+    color: red;
+  }
+
+  .outer *::placeholder {
+    color: red;
+  }
+

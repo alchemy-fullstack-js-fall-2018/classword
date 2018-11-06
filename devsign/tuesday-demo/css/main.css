@@ -1,0 +1,13 @@
+.outer {
+  background-color: #FFF;
+
+  .inner {
+    color: #000;
+  }
+
+  *::placeholder {
+    color: red;
+  }
+
+}
+
