@@ -12,9 +12,17 @@
     * MongoDB
         * mongoose models
         * static vs instance methods
+            * `Model.static_method` ->  `Model.find()`, `Model.create`, `Model.updateMany`
+            * `model.instance_method` -> `model.save()`, `model.validate`
+            * Arrays
+                * `Array.from` -> Static method
+                * `arr.map`, `arr.length` -> instance method
+                * `Array.prototype.myMethod = function() {}` -> create instance method
         * Aggregations
     * User auth
         * Basic vs token auth
+            * `https://ryan:password@gmail.com`
+            * Token: attaches a token to the Authorization header
 * Webpack
 * The DOM
 * Components
