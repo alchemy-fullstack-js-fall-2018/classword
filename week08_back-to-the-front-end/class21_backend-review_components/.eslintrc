@@ -11,7 +11,7 @@
     "extends": ["eslint:recommended"],
     "rules": {
         "no-console": "warn",
-        "indent": ["error", 4, { "SwitchCase": 1 }],
+        "indent": ["error", 2, { "SwitchCase": 1 }],
         "quotes": ["error", "single"],
         "semi": ["error", "always"],
         "space-in-parens": ["error"],
@@ -21,9 +21,9 @@
         "space-before-function-paren": ["error", "never"],
         "eol-last": ["error", "always"],
         "keyword-spacing": [
-          "error", 
-          { 
-            "before": true, 
+          "error",
+          {
+            "before": true,
             "after": true,
             "overrides": {
                 "do": { "after": false },
@@ -32,10 +32,9 @@
                 "switch": { "after": false },
                 "while": { "after": false },
                 "catch": { "after": false }
-            } 
+            }
           }
         ],
         "array-bracket-spacing": "error"
     }
   }
-  

@@ -3,6 +3,10 @@
       "ecmaVersion": 9,
       "sourceType": "module"
     },
+    "plugins": [
+      "babel",
+      "react"
+    ],
     "env": {
       "es6": true,
       "node": true,
@@ -21,9 +25,9 @@
         "space-before-function-paren": ["error", "never"],
         "eol-last": ["error", "always"],
         "keyword-spacing": [
-          "error", 
-          { 
-            "before": true, 
+          "error",
+          {
+            "before": true,
             "after": true,
             "overrides": {
                 "do": { "after": false },
@@ -32,10 +36,9 @@
                 "switch": { "after": false },
                 "while": { "after": false },
                 "catch": { "after": false }
-            } 
+            }
           }
         ],
         "array-bracket-spacing": "error"
     }
   }
-  
