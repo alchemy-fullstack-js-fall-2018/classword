@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should be a header 1`] = `
+"
+      <header class=\\"header\\">
+        <nav>
+          <a href=\\"/about\\">about</a>
+        </nav>
+      </header>"
+`;
