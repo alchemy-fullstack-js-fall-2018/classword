@@ -14,7 +14,7 @@
     * Props and State
     * React devtools
 * Demo
-    
+
 
 ## Background
 
@@ -38,7 +38,7 @@
     * Offer developers API for declaring or describing:
         * how the data and html should be combined (interpolation)
         * data changes
-    * Syncing data to UI happens "automagically"
+    * Syncing data to UI happens "magically"
 * JavaScript (, HTML, CSS)
     * New language features
     * Optimizations and other production enhancements

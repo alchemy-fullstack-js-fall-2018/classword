@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: [
     // add plugins
-    //new CleanPlugin(`${path}/bundle.*.js`),
+    //new CleanPlugin('./dist/bundle.*.js'),
     new HtmlPlugin({ template: './src/index.html' })
   ],
   module: {

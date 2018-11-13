@@ -4,6 +4,9 @@
       "ecmaVersion": 9,
       "sourceType": "module"
     },
+    "globals": {
+      "document": true
+    },
     "plugins": [
       "babel",
       "react"

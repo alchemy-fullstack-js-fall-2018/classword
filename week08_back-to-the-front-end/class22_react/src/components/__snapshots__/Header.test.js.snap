@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header header snapshot 1`] = `
+<header>
+  <img
+    src="/path/image"
+  />
+  <h1>
+    my title
+  </h1>
+</header>
+`;
+
+exports[`Header header snapshot with default title 1`] = `
+<header>
+  <img
+    src="/path/image"
+  />
+  <h1>
+    Default Title
+  </h1>
+</header>
+`;
