@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EpisodeList renders an EpisodeList 1`] = `
+<Fragment>
+  <Pageable
+    currentPage={1}
+    totalPages={10}
+    updatePage={[Function]}
+  />
+</Fragment>
+`;

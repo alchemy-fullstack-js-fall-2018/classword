@@ -18,6 +18,14 @@ class Search extends Component {
     artists: []
   };
 
+  shouldComponentUpdate(nextProps, nextState) {
+    // //PureComponent
+    // return nextProps !== this.props && nextState !== this.state;
+
+    // // Component
+    // return true
+  }
+
   doSearch = () => {
     const { searchTerm } = queryString.parse(this.props.location.search.slice(1));
     if(!searchTerm) return;
