@@ -1,0 +1,24 @@
+.notes {
+  .notesList {
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    margin: 0;
+    padding: 1em;
+  }
+
+  .noteItem {
+    text-decoration: none;
+    padding: 0.5em;
+    border: 1px solid black;
+    margin: 0.4em;
+
+    &:visited {
+      color: #000;
+    }
+
+    &:hover {
+      background-color: #F6F6F6;
+    }
+  }
+}
