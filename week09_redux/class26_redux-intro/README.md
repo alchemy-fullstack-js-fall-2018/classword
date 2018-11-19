@@ -74,6 +74,16 @@
     * Use `getNotes` selector
       * Compose on previous work!
     * Use `filter` to filter notes
+  * Write `NotesByTitle.js`
+    * Very similar to `AllNotes.js`
+    * Change selector
+    * Add to routes
+    * Add to Header
+  * Write `NotesByLength.js`
+    * Very similar to `AllNotes.js`
+    * Change selector
+    * Add to routes
+    * Add to Header
   * Write `HiNotes.js`
     * Very similar to `AllNotes.js`
     * Change selector

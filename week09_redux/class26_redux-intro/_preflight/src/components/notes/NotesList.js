@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../../routes/routes';
-import styles from './Notes.css';
+import styles from './NotesList.css';
 
 const Notes = ({ notes }) => {
   const notesComponents = notes.map(({ id, title }) =>

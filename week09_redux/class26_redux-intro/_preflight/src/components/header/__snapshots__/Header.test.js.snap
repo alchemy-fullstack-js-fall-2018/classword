@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders a Header component 1`] = `
+<header
+  className="header"
+>
+  <nav>
+    <Link
+      replace={false}
+      to="/"
+    >
+      Home
+    </Link>
+    <Link
+      replace={false}
+      to="/notes/byTitle"
+    >
+      Notes By Title
+    </Link>
+    <Link
+      replace={false}
+      to="/notes/byLength"
+    >
+      Notes By Length
+    </Link>
+    <Link
+      replace={false}
+      to="/notes/hi"
+    >
+      Hi Notes
+    </Link>
+  </nav>
+  <h1>
+    Note taking
+  </h1>
+</header>
+`;

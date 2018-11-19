@@ -1,7 +1,13 @@
+@import '../../styles/variables.css';
+
 .notes {
+  h3 {
+    margin: 0;
+  }
   .notesList {
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
     list-style: none;
     margin: 0;
     padding: 1em;
@@ -18,7 +24,11 @@
     }
 
     &:hover {
-      background-color: #F6F6F6;
+      background-color: var(--lightWhite);
+    }
+
+    &:active {
+      color: #000;
     }
   }
 }

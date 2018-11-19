@@ -1,7 +1,23 @@
+@import '../../styles/variables.css';
+
 .noteForm {
   label {
     display: inline-block;
     width: 5em;
     margin-right: 1em;
+  }
+
+  input, textarea {
+    width: 100%;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    background-color: var(--primary);
+    padding: 0.5em;
+    color: var(--lightWhite);
+    border: 1px solid #000;
+    cursor: pointer;
   }
 }

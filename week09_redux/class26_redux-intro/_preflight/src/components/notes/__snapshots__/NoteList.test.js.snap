@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotesList renders a NoteList component 1`] = `
+<div
+  className="notes"
+>
+  <h3>
+    Notes
+  </h3>
+  <div
+    className="notesList"
+  >
+    <Link
+      className="noteItem"
+      key="1234"
+      replace={false}
+      to="/"
+    >
+      hi there
+    </Link>
+  </div>
+</div>
+`;

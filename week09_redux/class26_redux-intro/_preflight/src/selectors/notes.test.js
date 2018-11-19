@@ -1,4 +1,10 @@
-import { getNotes, getNote, getSearchNotes } from './notes';
+import {
+  getNotes,
+  getNote,
+  getNotesByTitle,
+  getNotesByLength,
+  getSearchNotes
+} from './notes';
 
 const notes = {
   a: {
@@ -26,6 +32,46 @@ describe('notes selectors', () => {
     Object.keys(notes).forEach(id => {
       expect(getNote(notes, id)).toEqual(notes[id]);
     });
+  });
+
+  it('retrieves notes sorted by title', () => {
+    expect(getNotesByTitle(notes)).toEqual([
+      {
+        id: 'c',
+        title: 'Deriving data',
+        body: 'Selectors add reliability and consistency to deriving data from the store'
+      },
+      {
+        id: 'b',
+        title: 'Select data',
+        body: 'Selectors can select all or some data from our state'
+      },
+      {
+        id: 'a',
+        title: 'Selectors',
+        body: 'Selectors make retrieving things from the store easier'
+      }
+    ]);
+  });
+
+  it('retrieves notes sorted by body length', () => {
+    expect(getNotesByLength(notes)).toEqual([
+      {
+        id: 'c',
+        title: 'Deriving data',
+        body: 'Selectors add reliability and consistency to deriving data from the store'
+      },
+      {
+        id: 'a',
+        title: 'Selectors',
+        body: 'Selectors make retrieving things from the store easier'
+      },
+      {
+        id: 'b',
+        title: 'Select data',
+        body: 'Selectors can select all or some data from our state'
+      }
+    ]);
   });
 
   it('retrieves notes that start with a searchTerm', () => {

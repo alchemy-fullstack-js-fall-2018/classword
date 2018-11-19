@@ -1,0 +1,7 @@
+@import "../../styles/variables.css";
+
+body {
+  max-width: 80em;
+  margin: auto;
+  background-color: var(--lightWhite);
+}

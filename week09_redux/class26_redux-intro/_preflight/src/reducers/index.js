@@ -1,9 +1,8 @@
 import { ADD_NOTE } from '../actions/notes';
+import fakeNotes from '../fixtures/fakeNotes';
 import uuid from 'uuid/v4';
 
-const initialState = {
-  abcd1234: { title: 'My First Note', body: 'This is an initial note' }
-};
+const initialState = fakeNotes;
 
 export default function reducer(state = initialState, { type, payload }) {
   switch(type) {
