@@ -45,9 +45,6 @@
       * tells store how to transform (update state)
   * Write `index.js`
     * `Provider` to provides our store to `<App />`
-  * Write `Note.js`
-    * Use `PropTypes`
-    * Add Note to routes
   * Write `NoteList.js`
     * Use `PropTypes`
   * Write `NoteForm.js`
@@ -69,6 +66,9 @@
     * Write `mapDispatchToProps`
       * Inject our action creators as props
     * Use `connect` to connect container with presentation
+  * Write `Note.js`
+    * Use `PropTypes`
+    * Add Note to routes
   * Write `getSearchNotes` selector
     * Test first!
     * Use `getNotes` selector
