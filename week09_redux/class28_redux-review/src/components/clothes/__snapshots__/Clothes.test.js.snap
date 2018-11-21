@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clothes component matches a snapshot 1`] = `
+<div
+  className="clothes"
+>
+  <h3>
+    10
+  </h3>
+  <ul>
+    <li
+      key="abcd1234"
+    >
+      abcd1234
+       - 
+      shirt
+       - 
+      red
+    </li>
+  </ul>
+</div>
+`;

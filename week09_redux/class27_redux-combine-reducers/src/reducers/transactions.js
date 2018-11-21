@@ -1,11 +1,12 @@
-import { SELL_CHEESE_PIZZA } from '../actions/pizza';
+import { SELL_CHEESE_PIZZA, SELL_PEPPERONI_PIZZA } from '../actions/pizza';
 
 const initialState = [];
 
-export default function reducer(state = initialState, action) {
+export default func tion reducer(state = initialState, action) {
   switch(action.type) {
     case SELL_CHEESE_PIZZA:
-      return [...state, { ...action.payload, type: SELL_CHEESE_PIZZA }];
+    case SELL_PEPPERONI_PIZZA:
+      return [...state, { ...action.payload, type: action.type }];
     default:
       return state;
   }
