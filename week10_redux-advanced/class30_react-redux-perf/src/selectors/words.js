@@ -18,20 +18,20 @@ export const getWords = state => {
   return getWordsState(state).dictionary;
 };
 
-export const getFilteredWordsSelector = (words, searchTerm) => {
+const getFilteredWordsSelector = (words, searchTerm) => {
   console.log('Selector called!');
   return selectorPerformance(badSelector.bind(null, words, searchTerm));
 };
 
-export const getFilteredWords = state => {
-  return selectorPerformance(getFilteredWordsSelector.bind(null, getWords(state), getSearchTerm(state)));
-};
+// export const getFilteredWords = state => {
+//   return selectorPerformance(getFilteredWordsSelector.bind(null, getWords(state), getSearchTerm(state)));
+// };
 
-// export const getFilteredWords = createSelector(
-//   getWords,
-//   getSearchTerm,
-//   getFilteredWordsSelector
-// );
+export const getFilteredWords = createSelector(
+  getWords,
+  getSearchTerm,
+  getFilteredWordsSelector
+);
 
 function selectorPerformance(fn) {
   const start = performance.now();

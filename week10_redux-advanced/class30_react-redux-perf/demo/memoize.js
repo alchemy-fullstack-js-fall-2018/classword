@@ -5,9 +5,12 @@ function memoize(fn) {
     const args = [...arguments];
     const hash = hashArguments(args);
 
-    if(!cache[hash]) cache[hash] = fn.apply(null, args);
+    const cachedResult = cache[hash];
+    if(cachedResult) return cachedResult;
 
-    return cache[hash];
+    const result = fn.apply(null, args);
+    cache[hash] = result;
+    return result;
   };
 }
 
@@ -17,15 +20,15 @@ function hashArguments(args) {
 
 
 function add(a, b) {
-  console.log('called');
+  console.log('WAS CALLED');
   return a + b;
 }
 
-
 const memoAdd = memoize(add);
 
-console.log(memoAdd(1, 2));
-console.log(memoAdd(1, 2));
-console.log(memoAdd(2, 5));
-console.log(memoAdd(2, 5));
-console.log(memoAdd(1, 2));
+console.log(memoAdd(4, 5));
+console.log(memoAdd(4, 5));
+console.log(memoAdd(3, 5));
+console.log(memoAdd(4, 5));
+console.log(memoAdd(4, 5));
+console.log(memoAdd(3, 5));

@@ -18,10 +18,10 @@ export default class App extends Component {
     return (
       <Fragment>
         <input name="title" value={title} onChange={this.handleChange} />
-        <Comp title={title} />
-        <Pure title={title} />
-        <Func title={title} />
-        {/* <WordsSearch /> */}
+        <Comp title="My Title" />
+        <Pure title="My Title" />
+        <Func title="My Title" />
+        <WordsSearch />
       </Fragment>
     );
   }

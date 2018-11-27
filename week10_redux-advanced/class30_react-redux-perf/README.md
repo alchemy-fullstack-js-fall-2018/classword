@@ -2,7 +2,6 @@
 
 ## Agenda
 
-* Redux diagram
 * Higher order functions
   * functions that return functions
   * currying
