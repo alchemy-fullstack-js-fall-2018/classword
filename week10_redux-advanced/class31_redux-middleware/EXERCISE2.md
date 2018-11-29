@@ -5,14 +5,13 @@
 * test your middleware
   * create a mock reducer with `const reducer = jest.fn()`
   * create a store using the mock reducer
-    `const store = createStore(reducer, applyMiddleware(promiseMiddleware))`
-  * Test successful promise (use `Promise.resolve` as payload)
-    * `LOAD_START` action is sent
-    * `LOAD_END` action is sent
-    * `PROMISE_ACTION` action is sent
-  * Test unsuccessful promise (use `Promise.reject` as payload)
-    * `LOAD_END` action is sent
-    * `ERROR` action is sent
+    `const store = createStore(reducer, applyMiddleware(thunkMiddleware))`
+  * Dispatch a function:
+    ```
+      const actionFn = jest.fn();
+      store.dispatch(actionFn);
+    ```
+    * test that `actionFn` receives `dispatch` and `getState`
 
 ## Middleware
 

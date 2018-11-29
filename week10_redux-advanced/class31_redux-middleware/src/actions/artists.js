@@ -22,3 +22,8 @@ export const fetchArtists = searchTerm => dispatch => {
       });
     });
 };
+
+export const fetchArtists = searchTerm => ({
+  type: UPDATE_ARTISTS,
+  payload: getArtists
+})
