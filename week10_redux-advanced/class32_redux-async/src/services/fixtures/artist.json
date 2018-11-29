@@ -1,0 +1,400 @@
+{
+  "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+  "sort-name": "Nirvana",
+  "end_area": null,
+  "begin_area": {
+  "id": "a640b45c-c173-49b1-8030-973603e895b5",
+  "name": "Aberdeen",
+  "sort-name": "Aberdeen",
+  "disambiguation": ""
+  },
+  "name": "Nirvana",
+  "disambiguation": "90s US grunge band",
+  "isnis": [
+  "0000000123486830",
+  "0000000123487390"
+  ],
+  "ipis": [],
+  "gender": null,
+  "country": "US",
+  "works": [
+  {
+  "type-id": null,
+  "title": "Beans",
+  "language": "eng",
+  "iswcs": [
+  "T-072.726.678-5"
+  ],
+  "id": "02b2de82-9f31-3683-b112-419e1b86b1c5",
+  "attributes": [],
+  "languages": [
+  "eng"
+  ],
+  "type": null,
+  "disambiguation": ""
+  },
+  {
+  "id": "05ad4550-a38e-3cda-972c-900b3d335724",
+  "attributes": [],
+  "languages": [
+  "fra"
+  ],
+  "disambiguation": "",
+  "type": null,
+  "type-id": null,
+  "title": "Carmen: Acte I, No. 5. Havanaise : « L’amour est un oiseau rebelle » (Carmen, chœur)",
+  "iswcs": [],
+  "language": "fra"
+  },
+  {
+  "type-id": null,
+  "title": "Baba O’Riley",
+  "language": "eng",
+  "iswcs": [
+  "T-010.165.008-1"
+  ],
+  "languages": [
+  "eng"
+  ],
+  "id": "0acde909-3956-3a20-890a-5afccff15fd7",
+  "attributes": [],
+  "disambiguation": "",
+  "type": null
+  },
+  {
+  "type-id": null,
+  "title": "Blew",
+  "iswcs": [
+  "T-072.726.552-2"
+  ],
+  "language": "eng",
+  "languages": [
+  "eng"
+  ],
+  "attributes": [],
+  "id": "0b1efcd7-a3ed-3fb9-8a52-5d3678c516ed",
+  "type": null,
+  "disambiguation": ""
+  },
+  {
+  "iswcs": [
+  "T-070.248.662-1"
+  ],
+  "language": "eng",
+  "title": "All Apologies",
+  "type-id": null,
+  "type": null,
+  "disambiguation": "",
+  "languages": [
+  "eng"
+  ],
+  "attributes": [],
+  "id": "0bb9704c-aa0d-30b6-b6a4-d6c08613057b"
+  },
+  {
+  "type": null,
+  "disambiguation": "",
+  "languages": [
+  "eng"
+  ],
+  "id": "0dfca25e-e069-3d5b-8b0a-97571eeb0892",
+  "attributes": [],
+  "language": "eng",
+  "iswcs": [
+  "T-010.433.964-1"
+  ],
+  "type-id": null,
+  "title": "All You Need Is Love"
+  },
+  {
+  "languages": [
+  "eng"
+  ],
+  "id": "212c2e07-14b8-326a-bbbb-b9ea5a203be7",
+  "attributes": [],
+  "disambiguation": "",
+  "type": null,
+  "type-id": null,
+  "title": "Aero Zeppelin",
+  "iswcs": [
+  "T-072.726.612-7"
+  ],
+  "language": "eng"
+  },
+  {
+  "language": "eng",
+  "iswcs": [
+  "T-072.726.679-6"
+  ],
+  "title": "Blandest",
+  "type-id": null,
+  "type": null,
+  "disambiguation": "",
+  "attributes": [],
+  "id": "225aa9ec-8cc7-3e03-b821-01fd352ef721",
+  "languages": [
+  "eng"
+  ]
+  },
+  {
+  "iswcs": [],
+  "language": "eng",
+  "type-id": null,
+  "title": "Ain’t It a Shame",
+  "type": null,
+  "disambiguation": "",
+  "attributes": [],
+  "id": "427548a0-ced0-4ee9-807b-ff7561dc0c93",
+  "languages": [
+  "eng"
+  ]
+  },
+  {
+  "id": "4f4cf4ef-0357-37c4-9fc7-846513f5fa08",
+  "attributes": [],
+  "languages": [
+  "eng"
+  ],
+  "type": null,
+  "disambiguation": "",
+  "type-id": null,
+  "title": "Bad Moon Rising",
+  "language": "eng",
+  "iswcs": [
+  "T-070.014.915-0",
+  "T-070.880.726-4"
+  ]
+  },
+  {
+  "type-id": null,
+  "title": "Big Cheese",
+  "language": "eng",
+  "iswcs": [
+  "T-072.726.551-1"
+  ],
+  "languages": [
+  "eng"
+  ],
+  "attributes": [],
+  "id": "7496035f-2127-35b7-93e8-d65077089dc7",
+  "disambiguation": "",
+  "type": null
+  },
+  {
+  "id": "7b77ce3b-1c90-3764-87c8-ca4006081028",
+  "attributes": [],
+  "languages": [],
+  "disambiguation": "",
+  "type": null,
+  "title": "867-5309/Jenny",
+  "type-id": null,
+  "language": null,
+  "iswcs": [
+  "T-904.286.334-3"
+  ]
+  },
+  {
+  "title": "Breed",
+  "type-id": null,
+  "iswcs": [
+  "T-070.233.142-7"
+  ],
+  "language": "eng",
+  "languages": [
+  "eng"
+  ],
+  "attributes": [],
+  "id": "8600462a-9a49-3a0b-98e5-4cf8084943c3",
+  "type": null,
+  "disambiguation": ""
+  },
+  {
+  "title": "Big Long Now",
+  "type-id": null,
+  "iswcs": [
+  "T-072.726.613-8"
+  ],
+  "language": "eng",
+  "languages": [
+  "eng"
+  ],
+  "id": "870a4d0d-cfbb-3ae5-9bc3-98415b0b4800",
+  "attributes": [],
+  "disambiguation": "",
+  "type": null
+  },
+  {
+  "disambiguation": "",
+  "type": null,
+  "attributes": [],
+  "id": "89c7ce29-9ffb-368c-8821-d5ad85b967bd",
+  "languages": [
+  "eng"
+  ],
+  "language": "eng",
+  "iswcs": [
+  "T-071.069.487-3"
+  ],
+  "title": "(Don’t Fear) The Reaper",
+  "type-id": null
+  },
+  {
+  "id": "9a4b017c-2587-37ae-a260-6a51e854d86d",
+  "attributes": [],
+  "languages": [],
+  "disambiguation": "",
+  "type": null,
+  "title": "Blew (alternate lyrics)",
+  "type-id": null,
+  "language": null,
+  "iswcs": []
+  },
+  {
+  "language": "eng",
+  "iswcs": [
+  "T-070.231.969-4"
+  ],
+  "title": "Aneurysm",
+  "type-id": null,
+  "type": null,
+  "disambiguation": "",
+  "languages": [
+  "eng"
+  ],
+  "id": "abac9810-ab63-3570-a08e-e340b13da816",
+  "attributes": []
+  },
+  {
+  "type-id": null,
+  "title": "Clean Up Before She Comes",
+  "iswcs": [
+  "T-072.726.680-9"
+  ],
+  "language": "eng",
+  "languages": [
+  "eng"
+  ],
+  "id": "af118516-4856-3d94-9bd9-27bd5977a3b7",
+  "attributes": [],
+  "disambiguation": "",
+  "type": null
+  },
+  {
+  "attributes": [],
+  "id": "b8aeb29b-6c42-38da-a179-12e1fdb97ad3",
+  "languages": [
+  "eng"
+  ],
+  "disambiguation": "",
+  "type": null,
+  "type-id": null,
+  "title": "(I Can’t Get No) Satisfaction",
+  "language": "eng",
+  "iswcs": [
+  "T-010.072.181-0",
+  "T-070.240.484-9"
+  ]
+  },
+  {
+  "language": "eng",
+  "iswcs": [
+  "T-072.726.677-4"
+  ],
+  "type-id": null,
+  "title": "Anorexorcist",
+  "type": null,
+  "disambiguation": "",
+  "languages": [
+  "eng"
+  ],
+  "attributes": [],
+  "id": "c90c787a-83fb-3659-b7c6-35b5132ea65f"
+  },
+  {
+  "iswcs": [
+  "T-072.726.549-7"
+  ],
+  "language": "eng",
+  "title": "Been a Son",
+  "type-id": null,
+  "type": null,
+  "disambiguation": "",
+  "attributes": [],
+  "id": "cc2bb445-dd6c-32f1-9d39-05d1f32f6329",
+  "languages": [
+  "eng"
+  ]
+  },
+  {
+  "disambiguation": "Wipers",
+  "type": null,
+  "languages": [],
+  "id": "d20a2bd8-366f-4087-8980-17d97d6660d3",
+  "attributes": [],
+  "language": null,
+  "iswcs": [],
+  "type-id": null,
+  "title": "Alien Boy"
+  },
+  {
+  "iswcs": [],
+  "language": "eng",
+  "type-id": null,
+  "title": "(New Wave) Polly",
+  "disambiguation": "",
+  "type": null,
+  "languages": [
+  "eng"
+  ],
+  "attributes": [],
+  "id": "ee3e2a70-2efa-3b84-9aa4-7160e484abd8"
+  },
+  {
+  "type-id": null,
+  "title": "About a Girl",
+  "language": "eng",
+  "iswcs": [
+  "T-070.231.826-0"
+  ],
+  "attributes": [],
+  "id": "f4e29ec5-4806-3c2b-bc84-c802552e8f35",
+  "languages": [
+  "eng"
+  ],
+  "type": null,
+  "disambiguation": ""
+  },
+  {
+  "language": "eng",
+  "iswcs": [
+  "T-072.726.610-5"
+  ],
+  "type-id": null,
+  "title": "Beeswax",
+  "disambiguation": "",
+  "type": null,
+  "attributes": [],
+  "id": "fde69c45-0937-3a67-bb29-0ea8536334c2",
+  "languages": [
+  "eng"
+  ]
+  }
+  ],
+  "id": "5b11f4ce-a62d-471e-81fc-a69a8278c7da",
+  "gender-id": null,
+  "area": {
+  "sort-name": "United States",
+  "name": "United States",
+  "id": "489ce91b-6658-3307-9877-795b68554c98",
+  "disambiguation": "",
+  "iso-3166-1-codes": [
+  "US"
+  ]
+  },
+  "life-span": {
+  "ended": true,
+  "end": "1994-04-05",
+  "begin": "1988-01"
+  },
+  "type": "Group"
+  }
