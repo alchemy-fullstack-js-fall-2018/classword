@@ -1,0 +1,17 @@
+@import "../../css/variables.css";
+
+.header nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header nav a {
+  background-color: var(--primary);
+  padding: 1em;
+  text-decoration: none;
+  color: var(--text-light);
+}
+
+.header nav a:hover {
+  background-color: var(--secondary);
+}
