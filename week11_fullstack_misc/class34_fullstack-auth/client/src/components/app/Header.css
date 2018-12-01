@@ -1,0 +1,15 @@
+@import "../../css/variables.css";
+
+.header {
+
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  a {
+    padding: 1em;
+    background-color: $primary;
+    color: $text-light;
+  }
+}
