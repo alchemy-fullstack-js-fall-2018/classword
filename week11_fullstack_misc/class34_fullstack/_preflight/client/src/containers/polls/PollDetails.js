@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { fetchPoll } from '../../actions/polls';
 import { withFetch } from '../../components/withFetch';
 import { getPoll } from '../../selectors/polls';
@@ -15,14 +16,36 @@ class PollDetails extends PureComponent {
     results: PropTypes.array
   };
 
-  submitVotes = ({ target }) => {
-    const votes = [...target.querySelectorAll('input')]
-      .map(input => ({
-        id: input.getAttribute('data-id'),
-        name: input.getAttribute('data-name'),
-        vote: input.value
+  state = {
+    voteOrder: []
+  };
+
+  componentDidMount() {
+
+  }
+
+  componentDidUpdate(oldProps) {
+    if(oldProps !== this.props) {
+      if(this.props.poll) this.setState({ voteOrder: this.props.poll.candidates });
+    }
+  }
+
+  submitVotes = () => {
+    const votes = this.state.voteOrder
+      .map((vote, i) => ({
+        id: vote._id,
+        name: vote.name,
+        vote: i + 1
       }));
     postVotes(this.props.match.params.id, votes);
+  };
+
+  handleDrag = (result) => {
+    const voteOrder = [...this.state.voteOrder];
+    const [item] = voteOrder.splice(result.source.index, 1);
+    voteOrder.splice(result.destination.index, 0, item);
+
+    this.setState({ voteOrder });
   };
 
   render() {
@@ -33,12 +56,19 @@ class PollDetails extends PureComponent {
       .sort((a, b) => a.avgVote - b.avgVote)
       .map(result => <li key={result.candidateId}>{result.candidateName} - {result.avgVote}</li>);
 
-    const candidateInputs = poll.candidates.map(candidate => {
+    const candidateInputs = this.state.voteOrder.map((candidate, i) => {
       return (
-        <>
-          <label>{candidate.name}</label>
-          <input type="number" data-name={candidate.name} data-id={candidate._id} />
-        </>
+        <Draggable key={candidate._id} draggableId={candidate._id} index={i}>
+          {(provided) => (
+            <div
+              ref={provided.innerRef}
+              {...provided.draggableProps}
+              {...provided.dragHandleProps}
+            >
+              <div>{candidate.name}</div>
+            </div>
+          )}
+        </Draggable>
       );
     });
 
@@ -54,7 +84,15 @@ class PollDetails extends PureComponent {
           {resultsComponent}
         </ul>
         <form onSubmit={this.submitVotes}>
-          {candidateInputs}
+          <DragDropContext onDragEnd={this.handleDrag}>
+            <Droppable droppableId="candidates">
+              {(provided) => (
+                <div ref={provided.innerRef}>
+                  {candidateInputs}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
           <button>Vote</button>
         </form>
       </>

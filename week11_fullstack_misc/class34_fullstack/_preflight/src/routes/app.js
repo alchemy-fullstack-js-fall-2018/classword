@@ -9,7 +9,7 @@ app.use(express.static('client/dist'));
 
 app.use(express.json());
 
-app.use('/api', cors, apiRoutes);
+app.use('/api', apiRoutes);
 
 app.use('*', spa('/client/dist/index.html'));
 
