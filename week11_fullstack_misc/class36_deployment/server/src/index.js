@@ -1,13 +1,9 @@
 import { config } from 'dotenv';
-import mongoose, { mongo } from 'mongoose';
+import { connect } from './utils/connect';
 import app from './routes/app';
 
 config();
-
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-mongoose.connection.on('open', () => {
-  console.log('Connected');
-});
+connect();
 
 const PORT = process.env.PORT || 7891
 

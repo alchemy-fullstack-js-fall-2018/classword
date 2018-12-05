@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import User from '../../models/User';
 import { HttpError } from '../../middleware/error';
+import requireAuth from '../../middleware/requireAuth';
 
 export default Router()
   .post('/signup', (req, res, next) => {
@@ -20,4 +21,8 @@ export default Router()
         res.json(user);
       })
       .catch(next);
+  })
+
+  .get('/verify', requireAuth, (req, res, next) => {
+    res.json(req.user);
   });

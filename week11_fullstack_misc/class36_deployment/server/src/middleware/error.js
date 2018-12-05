@@ -7,7 +7,7 @@ export const errorHandler = (err, req, res, next) => {
     message = err.message
   }
 
-  res.status(status).end(message)
+  res.status(status).json({ error: message })
 }
 
 

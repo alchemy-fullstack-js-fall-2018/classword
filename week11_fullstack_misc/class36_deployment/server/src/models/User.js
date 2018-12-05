@@ -37,7 +37,7 @@ userSchema.methods.authToken = function () {
 }
 
 userSchema.statics.findByToken = function (token) {
-  return untokenize(token);
+  return Promise.resolve(untokenize(token));
 }
 
 export default mongoose.model('User', userSchema);
