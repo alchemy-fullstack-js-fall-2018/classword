@@ -1,6 +1,6 @@
 import { config } from 'dotenv';
 import mongoose, { mongo } from 'mongoose';
-import express from 'express';
+import app from './routes/app';
 
 config();
 
@@ -9,13 +9,6 @@ mongoose.connection.on('open', () => {
   console.log('Connected');
 });
 
-console.log(process.env.MONGODB_URI)
+const PORT = process.env.PORT || 7891
 
-
-const app = express();
-
-app.get('/', (req, res) => {
-  res.end('hi');
-});
-
-app.listen(7891);
+app.listen(PORT);
