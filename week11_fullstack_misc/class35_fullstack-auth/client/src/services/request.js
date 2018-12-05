@@ -3,40 +3,33 @@ import { updateSessionToken } from '../actions/session';
 
 let token = window.localStorage.getItem('token');
 
-store.subscribe(() => {
-  token = window.localStorage.getItem('token');
-});
-
-const setToken = token => {
-  store.dispatch(updateSessionToken(token));
-  window.localStorage.setItem('token', token);
+const setToken = newToken => {
+  token = newToken;
+  store.dispatch(updateSessionToken(newToken));
+  window.localStorage.setItem('token', newToken);
 };
 
-export const get = url => {
+const request = (url, method, body) => {
   return fetch(url, {
-    method: 'GET',
-    headers: {
-      'Authorization': `Bearer ${token}`
-    }
-  })
-    .then(res => res.json());
-};
-
-export const post = (url, body) => {
-  return fetch(url, {
-    method: 'POST',
+    method,
     headers: {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`
     },
     body: JSON.stringify(body)
   })
-    .then(res => {
-      const headerToken = res.headers.get('X-AUTH-TOKEN');
-      if(headerToken !== token) setToken(headerToken);
-      if(token) {
-        window.localStorage.setItem('token', token);
-      }
-      return res.json();
+    .then(res => [res.ok, res.headers, res.json()])
+    .then(([ok, headers, json]) => {
+      if(!ok) throw json;
+      return [headers, json];
+    })
+    .then(([headers, json]) => {
+      const headerToken = headers.get('X-AUTH-TOKEN');
+      if(headerToken && headerToken !== token) setToken(headerToken);
+      return json;
     });
 };
+
+export const get = url => request(url, 'GET');
+
+export const post = (url, body) => request(url, 'POST', body);

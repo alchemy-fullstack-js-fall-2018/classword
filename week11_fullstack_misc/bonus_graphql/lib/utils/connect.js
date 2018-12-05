@@ -1,37 +1,35 @@
-"use strict";
+/* eslint-disable  no-console */
+const { parse } = require('url');
+const mongoose = require('mongoose');
 
-var _url = require("url");
-
-var _mongoose = _interopRequireDefault(require("mongoose"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var log = function log(event, dbUrl) {
-  return function () {
-    // eslint-disable-next-line no-console
-    console.log("".concat(event.toUpperCase(), ": connection to ").concat(dbUrl));
-  };
+const log = (event, dbUrl) => {
+    return () => {
+        console.log(`${event.toUpperCase()}: connection to ${dbUrl}`);
+    };
 };
 
-var redactURLAuth = function redactURLAuth(url) {
-  var parsedUrl = (0, _url.parse)(url);
-  var redactedAuth = parsedUrl.auth ? '***:***@' : '';
-  return "".concat(parsedUrl.protocol, "//").concat(redactedAuth).concat(parsedUrl.hostname, ":").concat(parsedUrl.port).concat(parsedUrl.path);
+const redactURLAuth = url => {
+    const parsedUrl = parse(url);
+    const redactedAuth = parsedUrl.auth ? '***:***@' : '';
+
+    return `${parsedUrl.protocol}//${redactedAuth}${parsedUrl.hostname}:${parsedUrl.port}${parsedUrl.path}`;
 };
 
-module.exports = function () {
-  var dbUrl = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : process.env.MONGODB_URI;
+module.exports = (dbUrl = process.env.MONGODB_URI) => {
+    mongoose.connect(dbUrl, { useNewUrlParser: true });
 
-  _mongoose.default.connect(dbUrl, {
-    useNewUrlParser: true
-  });
+    const redactedUrl = redactURLAuth(dbUrl);
 
-  var redactedUrl = redactURLAuth(dbUrl);
+    mongoose.connection.on('error', log('error', redactedUrl));
 
-  _mongoose.default.connection.on('error', log('error', redactedUrl));
+    mongoose.connection.on('open', log('open', redactedUrl));
 
-  _mongoose.default.connection.on('open', log('open', redactedUrl));
+    mongoose.connection.on('close', log('close', redactedUrl));
 
-  _mongoose.default.connection.on('close', log('close', redactedUrl));
+    process.on('SIGINT', () => {
+        mongoose.connection.close(() => {
+            console.log('Mongoose default connection disconnected through app termination');
+            process.exit(0);
+        });
+    });
 };
-//# sourceMappingURL=connect.js.map

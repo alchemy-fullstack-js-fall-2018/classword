@@ -1,10 +1,13 @@
-const { PollType, Poll } = require('./Poll');
+const { Person, PersonType } = require('./Person');
 const { prepareMongooseDoc } = require('../utils/graphql');
 const {
+  GraphQLNonNull,
   GraphQLObjectType,
+  GraphQLInputObjectType,
   GraphQLList,
   GraphQLSchema,
-  GraphQLString
+  GraphQLString,
+  GraphQLID
 } = require('graphql');
 
 const prepareObj = obj => {
@@ -18,26 +21,44 @@ const prepare = obj => {
   return prepareObj(obj);
 };
 
-const RootType = new GraphQLObjectType({
-  name: 'IRVSchema',
-  description: 'IRV root schema',
+const Queries = new GraphQLObjectType({
+  name: 'RootQueries',
+  description: 'My root queries',
   fields: () => ({
-    polls: {
-      type: new GraphQLList(PollType),
-      description: 'List Polls',
-      resolve: () => Poll.find().then(prepare)
+    person: {
+      description: 'retrieves a person',
+      type: PersonType,
+      args: { id: { type: GraphQLID } },
+      resolve: (_, { id }) => Person.findById(id).then(prepare)
     },
-    poll: {
-      type: PollType,
-      args: { id: { type: GraphQLString } },
-      description: 'IRV Poll',
-      resolve: (_, args) => Poll.findById(args.id).then(prepare)
+    people: {
+      description: 'retrieves a list of people',
+      type: new GraphQLList(PersonType),
+      resolve: () => Person.find().then(prepare)
     }
   })
 });
 
-const IRVSchema = new GraphQLSchema({
-  query: RootType
+const Mutations = new GraphQLObjectType({
+  name: 'Mutations',
+  description: 'Root mutations',
+  fields: () => ({
+    createPerson: {
+      description: 'Create a new person',
+      type: PersonType,
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        birthday: { type: GraphQLString },
+        status: { type: GraphQLString }
+      },
+      resolve: (_, { name, birthday, status }) => Person.create({ name, birthday, status }).then(prepare)
+    }
+  })
 });
 
-module.exports = IRVSchema;
+const Schema = new GraphQLSchema({
+  query: Queries,
+  mutation: Mutations
+});
+
+module.exports = Schema;

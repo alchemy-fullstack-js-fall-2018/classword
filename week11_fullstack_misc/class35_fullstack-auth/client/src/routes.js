@@ -4,8 +4,8 @@ import Home from './components/home/Home';
 import Polls from './containers/polls/Polls';
 import PollDetails from './containers/polls/PollDetails';
 import CreatePoll from './components/poll/CreatePoll';
-import { Signup, Login } from './components/auth/Auth';
 import { withSession } from './components/auth/withSession';
+import { Signup, Login } from './containers/auth/Auth';
 
 export const ROUTES = {
   HOME: {

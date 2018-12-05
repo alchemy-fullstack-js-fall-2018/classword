@@ -1,16 +1,37 @@
 const request = require('superagent');
+const { Person } = require('./lib/models/Person');
+
 
 const query = `
-{
-  polls {
-    title
+query getCharacter($rickId: ID!, $mortyId: ID!, $summerId: ID!) {
+  morty: character(id:$mortyId) {
+    ...characterField
   }
+  rick: character(id:$rickId) {
+    ...characterField
+  }
+  summer: character(id:$summerId) {
+    ...characterField
+  }
+}
+
+fragment characterField on Character {
+  id
+  name
+	species
+  gender
 }
 `
 
+const variables = JSON.stringify({
+  rickId: 1,
+  mortyId: 2,
+  summerId: 3
+});
+
 request
-  .get('http://localhost:7890/graphql')
-  .query({ query })
+  .get('https://rickandmortyapi.com/graphql/')
+  .query({ query, variables })
   .send()
   .then(res => {
     console.log(res.body);

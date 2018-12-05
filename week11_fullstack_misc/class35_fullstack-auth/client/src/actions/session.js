@@ -11,12 +11,18 @@ export const SESSION_ERROR = 'SESSION_ERROR';
 
 export const signup = ({ email, password }) => ({
   type: SESSION_CREATE,
+  loadStart: SESSION_LOADING,
+  loadEnd: SESSION_LOADED,
+  errorType: SESSION_ERROR,
   payload: signupService({ email, password })
 });
 
 
 export const login = ({ email, password }) => ({
   type: SESSION_CREATE,
+  loadStart: SESSION_LOADING,
+  loadEnd: SESSION_LOADED,
+  errorType: SESSION_ERROR,
   payload: loginService({ email, password })
 });
 

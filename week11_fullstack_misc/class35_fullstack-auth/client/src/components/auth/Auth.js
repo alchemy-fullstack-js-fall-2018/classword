@@ -1,10 +1,7 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { ROUTES } from '../../routes';
 import PropTypes from 'prop-types';
-import { signup, login } from '../../actions/session';
-import { getSession } from '../../selectors/session';
 
 export class AuthForm extends PureComponent {
   static propTypes = {
@@ -31,7 +28,7 @@ export class AuthForm extends PureComponent {
 
   render() {
     if(this.props.session) return <Redirect to={ROUTES.HOME.linkTo()} />;
-    console.log(this.props.session);;
+
     const { typeText } = this.props;
     const { email, password } = this.state;
     return (
@@ -46,23 +43,3 @@ export class AuthForm extends PureComponent {
     );
   }
 }
-
-export const Signup = connect(
-  state => ({
-    typeText: 'Signup',
-    session: getSession(state)
-  }),
-  dispatch => ({
-    onSubmit: ({ email, password }) => dispatch(signup({ email, password }))
-  })
-)(AuthForm);
-
-export const Login = connect(
-  state => ({
-    typeText: 'Login',
-    session: getSession(state)
-  }),
-  dispatch => ({
-    onSubmit: ({ email, password }) => dispatch(login({ email, password }))
-  })
-)(AuthForm);
