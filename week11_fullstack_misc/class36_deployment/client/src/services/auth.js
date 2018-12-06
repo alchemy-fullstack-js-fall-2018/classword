@@ -1,5 +1,4 @@
-import { post } from './requests';
-import { get } from 'http';
+import { post, get } from './requests';
 
 export const signupRequest = ({ email, password }) => {
   return post('/api/users/signup', { email, password });
